@@ -21,7 +21,6 @@ const agregarViaje = (req, res) => {
     console.log("se ejecutó primera parte")
   //destructuramos
   let {
-    id_viaje,
     destino_viaje,
     fecha_viaje,
     presupuesto_viaje,
@@ -35,8 +34,8 @@ const agregarViaje = (req, res) => {
   console.log("se ejecutó segunda parte")
 
   conexion_db.query(
-    'INSERT INTO `t_viaje`(`id_viaje`, `destino_viaje`, `fecha_viaje`, `presupuesto_viaje`, `comentario_viaje`) VALUES (?,?,?,?,?)',
-    [id_viaje, destino_viaje, fecha_viaje, presupuesto_viaje, comentario_viaje],
+    'INSERT INTO `t_viaje`(`destino_viaje`, `fecha_viaje`, `presupuesto_viaje`, `comentario_viaje`) VALUES (?,?,?,?)',
+    [destino_viaje, fecha_viaje, presupuesto_viaje, comentario_viaje],
     
     (err, results) => {
 
@@ -47,10 +46,11 @@ const agregarViaje = (req, res) => {
           console.log(results);
       }
 
-      console.log("se ejecutó cuarta parte")
-      res.send("Datos enviados con exito!");
+      console.log("Datos enviados")
     }
   );
+
+  res.send('Datos enviados')
 };
 
 module.exports = { obtenerViaje, agregarViaje };

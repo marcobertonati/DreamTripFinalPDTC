@@ -2,16 +2,17 @@
 //requerimos express
 const express = require('express');
 
-//requerimos controllers
+// Requerimos controllers
 const viaje_controllers = require('../controllers/dreamTripControllers');
 
-// definimos
+// Definimos
 const viajeRouter = express.Router();
 
+//RUTA OBTENER VIAJES
 viajeRouter.get('/',viaje_controllers.obtenerViaje);
 
+//RUTA POSTEAR VIAJE
 viajeRouter.post('/agregar-viaje', viaje_controllers.agregarViaje);
 
 // Exportamos las rutas
 module.exports = viajeRouter;
-
