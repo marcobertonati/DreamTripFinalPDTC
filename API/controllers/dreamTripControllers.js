@@ -7,18 +7,16 @@ const conexion_db = require("../config/bdConfig");
 const obtenerViaje = (req, res) => {
   conexion_db.query("SELECT * FROM t_viaje", (err, results) => {
     if (err) throw err;
-    // results.forEach((resultado)=>{
-    //     console.log(resultado.producto);
-    // })
-    // res.send(results);
-    console.log(results);
-    res.send('Datos importados de la base de datos');
+    // console.log(results);
+    res.send(results);
+    // res.send('Datos importados de la base de datos');
   });
 };
 
 // agregar viaje
 const agregarViaje = (req, res) => {
-    console.log("se ejecutó primera parte")
+    console.log("se ejecutó primera parte");
+
   //destructuramos
   let {
     destino_viaje,
@@ -41,8 +39,10 @@ const agregarViaje = (req, res) => {
 
     console.log("se ejecutó tercera parte")
       if (err) {
+          console.log("ENTRO A UN ERROR")
           console.log(err)
       } else {
+          console.log("ENTRO A UN BIEN")
           console.log(results);
       }
 
@@ -50,7 +50,15 @@ const agregarViaje = (req, res) => {
     }
   );
 
-  res.send('Datos enviados')
+  res.send('Datos enviados!')
+
 };
+
+// editar viajes
+
+
+// eliminar viajes
+
+
 
 module.exports = { obtenerViaje, agregarViaje };

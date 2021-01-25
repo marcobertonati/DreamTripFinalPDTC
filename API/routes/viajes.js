@@ -14,5 +14,8 @@ viajeRouter.get('/',viaje_controllers.obtenerViaje);
 //RUTA POSTEAR VIAJE
 viajeRouter.post('/agregar-viaje', viaje_controllers.agregarViaje);
 
+//RUTA ELIMINAR VIAJE
+
+
 // Exportamos las rutas
 module.exports = viajeRouter;
