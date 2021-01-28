@@ -22,7 +22,7 @@
 </head>
   
 <body>
-<div class="container-fluid">
+<div class="container-fluid sticky-top">
   <header class="sitioWeb">
       <h1 class="tituloWeb">DREAM TRIP</h1>   
     <div class="icono">
@@ -104,66 +104,30 @@
 <!-- Formulario nuevo -->
 <div class="container"><br>
   <h2>Armando mi viaje </h2>
-  <div class="formulario-bg"></div>
-
-<form id="formulario-viaje" class="formulario" action="http://localhost:8080/admin/agregar-viaje" method="POST">
-  
-  <div class="form-row">  
-    <div class="form-group">
-      <label for="destino">Destino</label>
-      <input type="text" class="form-control campo" id="destino" placeholder="Ingresa un destino" required name="destino"> 
-    </div><br>
+<div class="formulario-bg"></div>
+  <form id="formulario-viaje" class="formulario" action="http://localhost:8080/admin/agregar-viaje" method="POST">
     
-    <div class="form-group">
-      <label for="fecha">Fecha</label>
-      <input type="date" class="form-control campo" id="fecha" placeholder="¿En qué fecha te gustaría viajar?" required name="fecha">
+    <div class="form-row">  
+      <div class="form-group col-md-12">
+        <label for="destino">Destino</label>
+        <input type="text" class="form-control campo" id="destino" placeholder="Ingresa un destino" required name="destino"> 
+      </div><br>
+      <div class="form-group col-md-12">
+        <label for="fecha">Fecha</label>
+        <input type="date" class="form-control campo" id="fecha" placeholder="¿En qué fecha te gustaría viajar?" required name="fecha">
+      </div>
+      <div class="form-group col-md-12">
+        <label for="presupuesto">Presupuesto</label>
+        <input type="number" class="form-control campo" id="presupuesto" placeholder="¿Cuál es tu presupuesto? $" required name="presupuesto"> 
+      </div><br>
+      <div class="form-group col-md-12">
+        <label for="comentario">Ideas e información</label>
+        <textarea type="date" class="form-control mensaje-formulario campo" id="comentario" placeholder="Escribe tus ideas y más información aquí" rows="3"></textarea>
+      </div><br>
+      <button type="submit" class="btn btn-light" onclick="enviarDatos()" >Compartir mi viaje</button>
     </div>
-    <div class="form-group">
-      <label for="presupuesto">Presupuesto</label>
-      <input type="number" class="form-control campo" id="presupuesto" placeholder="¿Cuál es tu presupuesto? $" required name="presupuesto"> 
-    </div><br>
-    <div class="form-group">
-      <label for="comentario">Ideas e información</label>
-      <textarea type="date" class="form-control mensaje-formulario campo" id="comentario" placeholder="Escribe tus ideas y más información aquí" rows="3"></textarea>
-    </div><br>
-    <button type="submit" class="btn btn-light" onclick="enviarDatos()" >Compartir mi viaje</button>
-  </div>
-</form>
+  </form>
 </div>
-<!-- Tipo de formulario para armar un viaje -->
-<!-- <div class="container"><br>
-    <h2>Armando mi viaje </h2>
-    <div class="formulario-bg"></div>
-    <form id="formulario-viaje" class="formulario" action="http://localhost:8080/admin/agregar-viaje" method="POST">
-        
-      <div class="form-row">
-            <div class="form-group col-md-12">
-                <label for="destino">Destino</label>
-                <input type="text" class="form-control campo" id="destino" placeholder="Ingresa un destino" required name="destino">
-            </div> <br> -->
-      
-      
-      
-            <!-- <div class="form-group col-md-12">
-                <label for="fecha">Fecha</label>
-                <input type="date" class="form-control campo" id="fecha" placeholder="¿En qué fecha te gustaría viajar?" required name="fecha">
-            </div><br>
-            <div class="form-group col-md-12">
-                <label for="presupuesto">Presupuesto</label>
-                <input type="number" class="form-control campo" id="presupuesto" placeholder="¿Cuál es tu presupuesto? $" required name="presupuesto">
-            </div><br> -->
-            <!-- <div class="form-group">
-                <label for="comentario">Ideas e información</label>
-                <textarea class="form-control mensaje-formulario campo" id="comentario" placeholder="Escribe tus ideas y más información aquí" rows="3"></textarea>
-            </div> <br>
-            <button type="submit" class="btn btn-primary" onclick="enviarDatos()">Compartir mi viaje</button>
-        </div>
-    </form>
-</div> -->
-
-
-
-
 
 <!-- Footer -->
 <div class="card text-center">
