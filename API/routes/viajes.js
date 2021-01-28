@@ -16,6 +16,8 @@ viajeRouter.post('/agregar-viaje', viaje_controllers.agregarViaje);
 
 //RUTA ELIMINAR VIAJE
 
+// REGISTRO USUARIO
+viajeRouter.post('/registro', viaje_controllers.registroUsuario);
 
 // Exportamos las rutas
 module.exports = viajeRouter;

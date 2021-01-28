@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <!-- Css -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- Google Fonts -->
@@ -14,32 +14,109 @@
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
+
 <body>
-    <div class="container-fluid">
-        <header class="row">
-            <h1>DREAM TRIP</h1>
+  <div class="container-fluid">
+    <header class="sitioWeb">
+        <h1 class="tituloWeb">DREAM TRIP</h1><br><br>   
+        <img class="pictograma" src="../img/pictograma2.svg" class="img-fluid" alt="Responsive image">
+    </header>
+
+<!-- Login -->
+<section class="bienvenidos">
+    <p>Bienvenidos a DREAM TRIP, el sitio para soñar tu viaje y encontrar compañeros de ruta! <br>
+    Para ingresar regístrate o ingresa tu usuario
+    </p>   
+</section>
+
+ 
+   <!-- Login -->
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h3 class="active">Ingresa tus datos</h3>
+      
+  
+    <!-- Login Form -->
+      <form>
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Email">
+        <input type="text" id="password" class="fadeIn third" name="login" placeholder="Contraseña">
+        <input type="submit" class="fadeIn fourth" value="Ingresar">
+      </form>
+  
+    <!-- Olvidaste tu password? -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Olvidaste tu contraseña?</a></div>   
+     
+</div>
+</div>
+
+<!-- Modal no estas registrado? -->
+<!-- Button trigger modal -->
+<div class="botonRegistro"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+No tenés una cuenta? Registrate</button></div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Completa los siguientes campos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         
+        <form name="registro" onSubmit="limpiar()">
+          <label for="nombreUsuario">Nombre<input type="text" class="form-control" id="nombre_usuario" required="required"></label><br>
+          <label for="apellidoUsuario">Apellido<input type="text" class="form-control" id="apellido_usuario" required></label><br>
+          <label for="id_usuario">Email <input type="text" class="form-control" id="email_usuario" required></label><br>
+          <label for="telefono_usuario">Teléfono<input type="text" class="form-control" id="telefono_usuario"required></label><br>
+          <label for="ciudad_usuario">Ciudad<input type="text" class="form-control" id="ciudad_usuario"required></label><br>
+          <label for="pais_usuario">Pais<input type="text" class="form-control" id="pais_usuario"required></label><br>
+          <label for="contrasenia_usuario">Contraseña<input type="password" class="form-control" id="contraseña_usuario" required></label><br>
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <input type="submit" value="Registrarse" class="btn btn-primary" onclick="registroUsuario()">
+            <!-- <button type="submit" onclick="registroUsuario()" class="btn btn-primary">Registrarse</button> -->
+          </div>
+      </form>      
+    </div>
+    </div>
+  </div>
+</div>
         
-            <img src="../img/pictograma-paisaje-grande-11.png" class="img-fluid" alt="...">
-    
-        </header>
-        <!-- Footer -->
-        <div class="card text-center">
-            <div class="card-header">DREAM TRIP © 2020</div>
-            <div class="card-body">
-                <a href="..."><img src="../img/linkedin.png" alt=""></a>
-                <a href="..."><img src="../img/GitHub.png" alt=""></a>
-                <a href="..."><img src="../img/insta3.png" alt=""></a>
-            </div>
+
+
+
+
+
+    <!-- Footer -->
+    <div class="card text-center">
+        <div class="card-header">DREAM TRIP © 2020</div>
+        <div class="card-body">
+            <a href="..."><img src="../img/linkedin.png" alt=""></a>
+            <a href="..."><img src="../img/GitHub.png" alt=""></a>
+            <a href="..."><img src="../img/insta3.png" alt=""></a>
         </div>
     </div>
-    </div>
+</div>
+
+
+
+
 <!-- Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <!-- Axios -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
 <!-- mi js -->
-<script src="../js/script.js"></script>
+<!-- <script src="../js/script.js"></script> -->
+<script src="../js/script_login.js"></script>
+
+
+
 </body>
 </html>

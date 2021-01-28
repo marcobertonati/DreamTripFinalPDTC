@@ -5,8 +5,9 @@ const mysql = require('mysql');
 const conexion_db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password:'',
-    database: 'dreamtrip' //base de datos
+    password:'root',
+    database: 'dreamtrip', //base de datos
+    port: 8889
 });
 
 // conectamos base de datos
