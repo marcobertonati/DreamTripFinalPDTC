@@ -65,5 +65,3 @@ function enviarDatos() {
   alert("datos enviados");
   window.location = "armarviaje.html";
 }
-
-// formulario_viaje.addEventListener('submit',enviarDatos);

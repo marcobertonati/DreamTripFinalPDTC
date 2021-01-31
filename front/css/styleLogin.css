@@ -1,4 +1,4 @@
-/* // Login */
+/* Login */
 .bienvenidos {
     font-family: 'Fredoka One', cursive;
     font-size: 25px;
@@ -23,7 +23,7 @@
 
 .modal-body {
   text-align: center;
-  height: ;
+  /* height: ; */
 }
 
 /* Form inicio de sesion */

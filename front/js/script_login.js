@@ -1,3 +1,11 @@
+// Botón registrarse
+function enviar(pagina){
+    document.botonDeRegistro.action = pagina;
+    document.botonDeRegistro.submit();
+    
+    }
+
+
 // Registro Usuario
 
 function registroUsuario(e) {

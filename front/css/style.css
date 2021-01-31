@@ -75,6 +75,31 @@
     font-size: 1.2rem;
 }
 
+/* Registro.html */
+.bienvenidos {
+    font-family: 'Fredoka One', cursive;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 4rem;
+    color: rgb(76, 75, 75);
+    padding-bottom: 3rem;
+}
+.botonRegistro {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 8rem;
+}
+.btn-primary {
+    background-color: #56baed !important;
+    border-color:#56baed !important;
+    cursor: pointer;
+}
+.btn-primary:hover {
+    background-color: #1D7DEF !important;
+    transition: background-color 0.5s;   
+}
+
+
 /* CARUSEL */
 
 ::-webkit-scrollbar {

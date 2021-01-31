@@ -1,4 +1,7 @@
 // RUTAS DE VIAJES
+
+// Son las rutas DEL SERVIDOR. Definimos lo que vamos a solicitarle al servidor a través de rutas. Si vaa consultar una base de datos, que nos va a traer, etc.
+
 //requerimos express
 const express = require('express');
 

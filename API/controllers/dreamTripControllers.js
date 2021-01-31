@@ -1,13 +1,7 @@
-// const { response } = require('express');
-// const express = require('express');
-// const app = express();
-
-// const path = require('path');
-
 //CONTROLADORES TABLA VIAJE
 
 // requerimos base de datos
-const conexion_db = require("../config/bdConfig");
+const {conexion_db} = require("../config/bdConfig");
 
 // app.use(express.static(path.parse(__dirname).dir + '/front'));
 // obtenemos viajes
@@ -19,14 +13,6 @@ const obtenerViaje = (req, res) => {
     res.send(results);
     // res.send('Datos importados de la base de datos');
   });
-  // console.log(`${path.parse(__dirname).dir}/front`);
-  // app.use(express.static(`/Users/constanzapoma/Desktop/ultimoDreamTrip/dreamTrip1/front`));
-  
-  // app.get('/', (req, res) => {
-  //   res.sendFile(`/Users/constanzapoma/Desktop/ultimoDreamTrip/dreamTrip1/front`);
-  //  })
-  
-  // res.sendFile(`/Users/constanzapoma/Desktop/ultimoDreamTrip/dreamTrip1/front`);
 };
 
 
@@ -42,17 +28,11 @@ const agregarViaje = (req, res) => {
     comentario_viaje
   } = req.body;
 
-  console.log(` /////////////
-  Soy la linea 31: ${req.body}
-  /////////////`)
-
   console.log("se ejecutó segunda parte")
 
   conexion_db.query(
     'INSERT INTO `t_viaje`(`destino_viaje`, `fecha_viaje`, `presupuesto_viaje`, `comentario_viaje`) VALUES (?,?,?,?)',
-    [destino_viaje, fecha_viaje, presupuesto_viaje, comentario_viaje],
-    
-    (err, results) => {
+    [destino_viaje, fecha_viaje, presupuesto_viaje, comentario_viaje], (err, results) => {
     console.log("se ejecutó tercera parte")
       if (err) {
           console.log("ENTRO A UN ERROR")
@@ -61,12 +41,10 @@ const agregarViaje = (req, res) => {
           console.log("ENTRO A UN BIEN")
           console.log(results);
       }
-      console.log("Datos enviados")
+      console.log("Datos enviados a la base de datos")
     }
   );
-
-  res.send('Datos enviados!')
-
+  res.redirect('/pages/login.html');
 };
 
 // editar viajes
@@ -76,7 +54,6 @@ const agregarViaje = (req, res) => {
 
 
 // Registro Usuario
-
 const registroUsuario = (req, res) => {
   console.log("se ejecutó primera parte");
 
@@ -88,7 +65,7 @@ let {
   telefono_usuario,
   ciudad_usuario,
   pais_usuario,
-  contraseña_usuario
+  password_usuario
 } = req.body;
 
 console.log(` /////////////
@@ -97,9 +74,8 @@ Soy la linea 31: ${req.body}
 
 console.log("se ejecutó segunda parte")
 
-conexion_db.query(
-  'INSERT INTO `t_usuario`(`nombre_usuario`, `apellido_usuario`, `email_usuario`, `telefono_usuario`, `ciudad_usuario`, `pais_usuario`, `contraseña_usuario`) VALUES (?,?,?,?,?,?,?)',
-  [nombre_usuario, apellido_usuario, email_usuario, telefono_usuario, ciudad_usuario, pais_usuario, contraseña_usuario],
+conexion_db.query( 'INSERT INTO `t_usuario`(`nombre_usuario`, `apellido_usuario`, `email_usuario`, `telefono_usuario`, `ciudad_usuario`, `pais_usuario`, `password_usuario`) VALUES (?,?,?,?,?,?,?)',
+  [nombre_usuario, apellido_usuario, email_usuario, telefono_usuario, ciudad_usuario, pais_usuario, password_usuario],
   
   (err, results) => {
   console.log("se ejecutó tercera parte")
@@ -115,8 +91,6 @@ conexion_db.query(
 );
 res.send('Datos enviados!')
 };
-
-
 
 
 module.exports = { obtenerViaje, agregarViaje, registroUsuario };
