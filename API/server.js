@@ -14,30 +14,30 @@ app.use(cors());
 // middleware que permite lectura de datos del lado del cliente:
 // permite que mi app acepte json del lado del cliente
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 
 // Requerimos la configuración de passport
-const {passport} = require('./config/passportConfig');
+const { passport } = require('./config/passportConfig');
 
 app.use(passport.initialize());
 app.use(passport.session()); //passport con sesiones
 //Login passport
-app.post('/login',(req,res,next)=>{
-    passport.authenticate('local.login',(err,user,info)=>{
+app.post('/login', (req, res, next) => {
+    passport.authenticate('local.login', (err, user, info) => {
         console.log('Entró en autenticar')
 
-        if(err){return next(err)}
+        if (err) { return next(err) }
         console.log('Paso Next')
 
-        if(!user){return res.send(info)}
+        if (!user) { return res.send(info) }
         console.log('Paso 2 Next')
 
         req.login(user, function(err) {
             if (err) { return next(err); }
             console.log('Paso 3 Next')
             return res.send('Te has logueado');
-          });
-    })(req,res,next)
+        });
+    })(req, res, next)
 })
 
 
@@ -51,6 +51,6 @@ app.use('/admin', viajeRouter);
 app.use(express.static(path.parse(__dirname).dir + '/front'));
 
 // chequeamos que nos esté escuchando
-app.listen(8080,()=>{
+app.listen(8080, () => {
     console.log('escuchando en el puerto 8080');
 });

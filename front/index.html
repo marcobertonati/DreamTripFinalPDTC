@@ -1,124 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-  <!-- Css -->
-  <link rel="stylesheet" href="css/style.css" />
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
-    rel="stylesheet"
-  />
-  <title>DREAM TRIP</title>
-</head>
-  
-<body>
-<div class="container-fluid sticky-top">
-  <header class="sitioWeb" >
-      <h1 class="tituloWeb">DREAM TRIP</h1>   
-    <div class="icono">
-      <img class="icon" src="img/perfil_icon.svg" alt="">
-      <h4 class="userBienvenida">Bienvenido UserId</h4>
-    </div>
-      <img class="pictograma" src="img/pictograma2.svg" class="img-fluid" alt="Responsive image">
 
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-      <a class="navbar-brand" href="#">MENÚ</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/styleLogin.css">
+    <link rel="stylesheet" href="css/style3.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+    <title>DREAM TRIP</title>
+</head>
+
+<body>
+    <div class="container-fluid sticky-top">
+        <header class="sitioWeb">
+            <div class="container-fluid usuario">
+                <div class="icono" id="icono">
+                    <ul class="nav nav-pills-usuario">
+                        <li class="nav-item dropdown" id="icono">
+                            <a class="nav-link dropdown-toggle" id="miCuenta" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mi cuenta</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="./pages/registro.html">Crear cuenta</a>
+                                <a class="dropdown-item" href="./pages/login.html">Iniciar sesión</a>
+                                <a class="dropdown-item" href="./pages/perfil.html">Mi perfil</a>
+                                <a class="dropdown-item" href="#">Cerrar sesión</a>
+                        </li>
+                    </ul>
+                    <img class="icon" src="img/perfil_icon.svg" class="img-fluid" alt="Responsive image">
+                    </div>
+                    <div class="headerTitulo">
+                        <h1 class="tituloWeb">DREAM TRIP</h1>
+                    </div>
+                </div>
+
+                ​
+                <img class="pictograma" src="img/pictograma2.svg" class="img-fluid" alt="Responsive image"> ​
+                <!-- navbar -->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">MENÚ</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-    
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="pages/armarviaje.html">ARMAR VIAJE</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/buscarviaje.html">BUSCAR VIAJE</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/misviajes.html">MIS VIAJES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/mensajes.html">MENSAJES</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-</div>
-  
-<!-- Carrusel -->
-<section id="carousel">
-  <div class="carousel">
-    <div class="gallery">
-      <div class="item item-1"></div>
-      <div class="item item-2"></div>
-      <div class="item item-3"></div>
-      <div class="item item-4"></div>
-      <div class="item item-5"></div>
-      <div class="item item-6"></div>
-      <div class="item item-7"></div>
-      <div class="item item-8"></div>
-      <div class="item item-9"></div>
-      <div class="item item-10"></div>
-      <div class="item item-11"></div>
-      <div class="item item-12"></div>
-      <div class="item item-13"></div>
-      <div class="item item-14"></div>
-    </div>
-  </div>
-</section>
 
-<div class="pIndex">
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. A maiores
-      ratione at, ut molestias aliquid ipsum, odio adipisci amet non
-      blanditiis. Excepturi ducimus esse labore animi earum libero sint
-      commodi.
-    </p>
-</div>
+                        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages/armarviaje.html">ARMAR VIAJE</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages/buscarviaje.html">BUSCAR VIAJE</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages/misviajes.html">MIS VIAJES</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages/mensajes.html">MENSAJES</a>
+                                </li>
+                            </ul>
+                        </div>
+                </nav>
+        </header>
+        </div>
 
-<!-- Cards de viajes -->
-<div class="container-fluid">
-  <div class="nViajes"><h2>Nuevos viajes</h2></div>
-  <section class="row" id="cards-trip">
-            <!---ACÁ SE VA IMPRIMIR LA BASE DE DATOS-->
-  </section>
-</div>
-
-
-
-<!-- Footer -->
-<div class="card text-center">
-  <div class="card-header">DREAM TRIP © 2020</div>
-    <div class="card-body">
-      <a href="..."><img src="img/linkedin.png" alt="" /></a>
-      <a href="..."><img src="img/GitHub.png" alt="" /></a>
-      <a href="..."><img src="img/insta3.png" alt="" /></a>
-    </div>
-  </div>
-</div>
-
-<!-- Bootstrap -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-<!-- Axios -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
-
-<!-- mi js -->
-<script src="js/script.js"></script>
+        <!-- Carrusel -->
+        <section id="carousel">
+            <div class="carousel">
+                <div class="gallery">
+                    <div class="item item-1"></div>
+                    <div class="item item-2"></div>
+                    <div class="item item-3"></div>
+                    <div class="item item-4"></div>
+                    <div class="item item-5"></div>
+                    <div class="item item-6"></div>
+                    <div class="item item-7"></div>
+                    <div class="item item-8"></div>
+                    <div class="item item-9"></div>
+                    <div class="item item-10"></div>
+                    <div class="item item-11"></div>
+                    <div class="item item-12"></div>
+                    <div class="item item-13"></div>
+                    <div class="item item-14"></div>
+                </div>
+            </div>
+        </section>
+        ​
+        <div class="pIndex">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. A maiores ratione at, ut molestias aliquid ipsum, odio adipisci amet non blanditiis. Excepturi ducimus esse labore animi earum libero sint commodi.
+            </p>
+        </div>
+        ​
+        <!-- Cards de viajes -->
+        <div class="container-fluid">
+            <div class="nViajes">
+                <h2>Nuevos viajes</h2>
+            </div>
+            <section class="row" id="cards-trip">
+                <!---ACÁ SE VA IMPRIMIR LA BASE DE DATOS-->
+            </section>
+        </div>
+        ​ ​ ​
+        <!-- Footer -->
+        <div class="card text-center">
+            <div class="card-header">DREAM TRIP © 2020</div>
+            <div class="card-body">
+                <a href="..."><img src="img/linkedin.png" alt="" /></a>
+                <a href="..."><img src="img/GitHub.png" alt="" /></a>
+                <a href="..."><img src="img/insta3.png" alt="" /></a>
+            </div>
+        </div>
+        </div>
+        ​
+        <!-- Bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        ​
+        <!-- Axios -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+        ​
+        <!-- mi js -->
+        <script src="js/script.js"></script>
 </body>
+
 </html>

@@ -12,20 +12,21 @@ passport.use('local.login', new localStrategy({
     passwordField: 'password_usuario',
     passReqToCallback: true
 }, (req, email_usuario, password_usuario, done) => {
-    conexion_db.query('SELECT * FROM t_usuario WHERE email_usuario = ?', [email_usuario], 
-    (err, results) => {
-        
-        // console.log(results[0].email_usuario)
-        console.log(results.length);
+    conexion_db.query('SELECT * FROM t_usuario WHERE email_usuario = ?', [email_usuario],
+        (err, results) => {
 
-        if (results.length > 0) {
+            // console.log(results[0].email_usuario)
+            console.log(results.length);
 
-            console.log(results[0].email_usuario)
-            //(results[0].email_usuario === email_usuario
-            if (results[0].email_usuario === email_usuario) {
+            if (results.length > 0) {
+
+                console.log(results[0].email_usuario)
+                    //(results[0].email_usuario === email_usuario
+                    // console.log(results[0].pais_usuario)
+                    // if (results[0].length > 0) {
 
                 console.log('Encontré un usuario')
-                
+
                 if (results[0].password_usuario === password_usuario) {
                     return done(null, results[0]);
                 } else {
@@ -35,7 +36,7 @@ passport.use('local.login', new localStrategy({
                 return done(null, false, { mensaje: 'Usuario no existe' });
             }
         }
-    })
+    )
 }))
 
 //Controlador de registro
@@ -71,4 +72,4 @@ passport.deserializeUser((user, done) => {
     })
 })
 
-module.exports = {passport};
+module.exports = { passport };

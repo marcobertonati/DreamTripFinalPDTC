@@ -1,10 +1,20 @@
-/* Body */
+ /* Body */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+/* * {
+    border: 0.1px solid black; 
+} */
+
+@media (max-width:600px) {
+    .tituloWeb {
+        font-size: 2em;
+        margin: 0 1.5rem;
+    }
+}
 
 /* Header */
 .sitioWeb {
@@ -17,12 +27,22 @@
     padding-right: 0px !important;
 
 }
+.usuario {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding-bottom: 0rem !important;  
+    padding-right: 1rem !important;
+  }
+  
+
 .tituloWeb {
     font-family: 'Fredoka One', cursive;
-    text-align: center;
+    text-align: left;
     color: white;
     font-size: 4rem;
-    padding-top: 2rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
 }
 
 .nViajes {
@@ -35,19 +55,51 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-start;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0rem;
 }
 .icon {
-    width: 80px;
-    padding-right: 2rem;
+    width: 3em;
+    padding-right: 0rem;
 }
 
-.userBienvenida {
-    font-size: 1.2rem;
-    color: white;
-    padding-top: 1.8rem;
-    padding-right: 1rem;
+#icono {
+    padding: 0.3rem;
+  }
+
+/* Nav desplegable */
+.nav nav-pills-usuario {
+    display: flex !important;
+    justify-content: right !important;
 }
+
+.nav-link dropdown-toggle {
+    color: white !important;
+    padding: 0rem !important;
+}
+
+.nav-item .dropdown {
+    padding-left: 6rem !important;
+    padding-left: 0rem; 
+}
+
+a {
+    color: white !important;
+}
+
+.nav-link {
+    padding: 0.3rem !important;
+    padding-bottom: 0rem !important;
+}
+
+#miCuenta {
+    padding: 2rem 1rem 0rem 0rem !important;
+}
+
+
+.miPerfilSecciones {
+    padding: 2rem 1rem 0rem 0rem !important;
+}
+
 
 /* NAVBAR */
 .bg-light {
@@ -66,13 +118,13 @@
 /* item MENU */
 .navbar-light .navbar-brand {
     color: white;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding-left: 2rem;
 }
 /* items secciones */
 .navbar-light .navbar-nav .nav-link {
     color: white;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 /* Registro.html */
@@ -97,11 +149,11 @@
 .btn-primary:hover {
     background-color: #1D7DEF !important;
     transition: background-color 0.5s;   
+
 }
 
 
 /* CARUSEL */
-
 ::-webkit-scrollbar {
     background: #d4d4d4;
     width: 8px;
@@ -280,8 +332,8 @@
     background-color: #ffffff;
     margin: -5rem auto 0 auto;
     width: 80%;
-    padding: 5rem;
-    font-size: 1.4rem;
+    padding: 5rem 5rem 2rem 5rem ;
+    font-size: 1.2rem;
     color: rgb(107, 138, 242);
     font-family: 'Red Hat Display', sans-serif;
 }

@@ -1,0 +1,70 @@
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    width: auto;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  
+  @media (max-width:600px) {
+    .tituloWeb {
+        font-size: 2em;
+        margin: 0 1.5rem;
+    }
+}
+
+.usuario {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding-bottom: 0rem !important;  
+    padding-right: 1rem !important;
+  }
+  
+  .icono {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    padding: 0rem;
+  }
+  
+  .icon {
+    width: 3em;
+    padding-right: 0rem;
+  }
+  
+  #icono {
+    padding: 0.3rem;
+  }
+  
+  /* Nav desplegable */
+  .nav nav-pills-usuario {
+    display: flex !important;
+    justify-content: right !important;
+  }
+  
+  .nav-link dropdown-toggle {
+    color: white !important;
+    padding: 0rem !important;
+  }
+  
+  .nav-item .dropdown {
+    padding-left: 6rem !important;
+    padding-left: 0rem; 
+  }
+  
+  a {
+    color: white !important;
+  }
+  
+  #miCuenta {
+    padding: 2rem 1rem 0rem 0rem !important;
+  }
+  
+  .nav-item {
+    padding-right: 5rem;
+    padding-left: 5rem;
+  }
+  
+  .dropdown-item {
+    color: #1D7DEF !important;
+  }
+  
