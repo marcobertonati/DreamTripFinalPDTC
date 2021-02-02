@@ -11,7 +11,7 @@ const cors = require('cors');
 // middleware que ejecuta cors
 app.use(cors());
 
-// middleware que permite lectura de datos:
+// middleware que permite lectura de datos del lado del cliente:
 // permite que mi app acepte json del lado del cliente
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -21,7 +21,6 @@ const {passport} = require('./config/passportConfig');
 
 app.use(passport.initialize());
 app.use(passport.session()); //passport con sesiones
-
 //Login passport
 app.post('/login',(req,res,next)=>{
     passport.authenticate('local.login',(err,user,info)=>{
