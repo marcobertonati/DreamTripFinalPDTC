@@ -1,14 +1,27 @@
 //PROYECTO FINAL DREAM TRIP
 //requerimos express
 const express = require('express');
+const session = require('express-session');
+const MySQLStore = require('express-mysql-session')(session);
+
+
 const path = require('path');
 
 // ejecutamos el servidor
 const app = express();
 
+// MEIDDLEWARE SESSION STORE
+const {options} = require('./config/bdConfig')
+const sessionStore =new MySQLStore(options);
+app.use(session({
+    secret: 'este es mi pequeño secreto',
+    resave: true,
+    saveUninitialized: true,
+    store: sessionStore
+}))
+
 // requerimos cors
 const cors = require('cors');
-// middleware que ejecuta cors
 app.use(cors());
 
 // middleware que permite lectura de datos del lado del cliente:
@@ -21,29 +34,55 @@ const { passport } = require('./config/passportConfig');
 
 app.use(passport.initialize());
 app.use(passport.session()); //passport con sesiones
+
+const isLogin = (req, res, next) => {
+    if (req.isAuthenticated())
+        return next();
+        res.redirect('/');
+}
+
 //Login passport
 app.post('/login', (req, res, next) => {
     passport.authenticate('local.login', (err, user, info) => {
         console.log('Entró en autenticar')
 
         if (err) { return next(err) }
+        console.log(err)
         console.log('Paso Next')
 
         if (!user) { return res.send(info) }
+        console.log(!user)
         console.log('Paso 2 Next')
 
         req.login(user, function(err) {
             if (err) { return next(err); }
             console.log('Paso 3 Next')
-            return res.send('Te has logueado');
+            console.log(user);
+            return res.redirect('/users/' + user.username);
         });
     })(req, res, next)
 })
 
 
+// app.post('/login',
+// passport.authenticate('local.login', {
+//     successRedirect: 'https://www.google.com/',
+//     failureRedirect: '/login',
+//     failureFlash: true
+// }))
+
+
+//logout
+app.get('/logout', isLogin, (req, res)=>{
+    console.log('Entro a logout')
+    req.logout();
+    res.send('/');
+  });
+
 
 // Requerimos rutas de API
 const viajeRouter = require('./routes/viajes');
+const { Router } = require('express');
 app.use('/admin', viajeRouter);
 
 

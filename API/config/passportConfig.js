@@ -16,7 +16,7 @@ passport.use('local.login', new localStrategy({
         (err, results) => {
 
             // console.log(results[0].email_usuario)
-            console.log(results.length);
+            // console.log(results.length);
 
             if (results.length > 0) {
 
@@ -28,11 +28,14 @@ passport.use('local.login', new localStrategy({
                 console.log('Encontré un usuario')
 
                 if (results[0].password_usuario === password_usuario) {
+                    console.log('Contraseña correcta')
                     return done(null, results[0]);
                 } else {
+                    console.log('Contraseña incorrecta')
                     done(null, false, { mensaje: 'Usuario o Contraseña incorrecta' });
                 }
             } else {
+                console.log('Usuario no existe')
                 return done(null, false, { mensaje: 'Usuario no existe' });
             }
         }

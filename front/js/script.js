@@ -65,3 +65,12 @@ function enviarDatos() {
   alert("datos enviados");
   window.location = "armarviaje.html";
 }
+
+function cerrarSesion() {
+  alert('vas a Cerrar sesion');
+
+  axios.get("http://localhost:8080/logout", {
+  })
+  alert('Cerraste sesion');
+
+}

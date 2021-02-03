@@ -37,9 +37,37 @@ function registroUsuario() {
             telefono_usuario: telefono,
             ciudad_usuario: ciudad,
             pais_usuario: pais,
-            contraseña_usuario: contraseña
+            password_usuario: contraseña
         });
         alert("datos enviados");
         window.location = "login.html";
     }
+}
+
+function ingresoUsuario () {
+    let usuario = document.getElementById("login").value;
+    let contrasenia = document.getElementById("password").value;
+    alert(`El usuario es ${usuario} y su contraseña es ${contrasenia}`)
+    console.log(`El usuario es ${usuario} y su contraseña es ${contrasenia}`)
+
+
+    axios.post("http://localhost:8080/login", {
+        email_usuario: usuario,
+        password_usuario: contrasenia
+    });
+    alert(`Ingresaste usuario ${usuario}`)
+
+    .then((response)=>{
+        console.log(response.status)
+        alert(response.status)
+
+        if(response.status ===200) {
+            window.location = "./index.html";
+        }
+    })
+    .catch((error)=>{
+        console.log(`Esto es el error de la linea 68 ${error}`)
+    })
+
+
 }

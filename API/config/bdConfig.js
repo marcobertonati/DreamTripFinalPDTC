@@ -3,9 +3,8 @@ const mysql = require('mysql');
 // definimos base de datos
 const options = {
     host: 'localhost',
-    port: 8889,
     user: 'root',
-    password: 'root',
+    password: '',
     database: 'dreamtrip', //base de datos
 };
 
