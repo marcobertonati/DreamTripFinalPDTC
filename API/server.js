@@ -1,4 +1,4 @@
-//PROYECTO FINAL DREAM TRIP
+//PROYECTO FINAL DREAM TRIP: programá desde tu casa
 //requerimos express
 const express = require('express');
 const session = require('express-session');
