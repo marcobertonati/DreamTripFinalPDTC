@@ -4,7 +4,7 @@ function mostrarViajes() {
 
   let cardViaje = document.getElementById("cards-trip");
 
-  axios.get("http://localhost:8080/admin/").then((response) => {
+  axios.get("http://localhost:8080/admin/mostrar-viaje").then((response) => {
     console.log("PEDIDO DE BASE DE DATOS");
     console.log(response.data);
 

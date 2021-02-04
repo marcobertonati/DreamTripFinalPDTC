@@ -30,13 +30,14 @@ passport.use('local.login', new localStrategy({
                 if (results[0].password_usuario === password_usuario) {
                     console.log('Contraseña correcta')
                     return done(null, results[0]);
+                    
                 } else {
                     console.log('Contraseña incorrecta')
-                    done(null, false, { mensaje: 'Usuario o Contraseña incorrecta' });
+                    done(null, false, { mensaje: 'Usuario o Contraseña incorrecta', condicion: false });
                 }
             } else {
                 console.log('Usuario no existe')
-                return done(null, false, { mensaje: 'Usuario no existe' });
+                return done(null, false, { mensaje: 'Usuario no existe', condicion: false });
             }
         }
     )
@@ -64,13 +65,16 @@ passport.use('local.login', new localStrategy({
 // Serialización hay que modular
 passport.serializeUser((user, done) => {
     console.log('ESTE USUARIO ES EL QUE ENCONTRE');
-    console.log(user);
+    // console.log(user);
     done(null, user.email_usuario);
 });
 
 // Deserealización
-passport.deserializeUser((user, done) => {
-    conexion_db.query('SELECT * FROM t_usuario WHERE id=?', [user.email_usuario], (err, results) => {
+passport.deserializeUser((email_usuario, done) => {
+    console.log('Entro a la deserialización')
+    // console.log(email_usuario)
+    conexion_db.query('SELECT * FROM t_usuario WHERE email_usuario=?', [email_usuario], (err, results) => {
+        // console.log(results[0])
         done(err, results[0]);
     })
 })

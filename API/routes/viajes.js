@@ -12,7 +12,7 @@ const viaje_controllers = require('../controllers/dreamTripControllers');
 const viajeRouter = express.Router();
 
 //RUTA OBTENER VIAJES
-viajeRouter.get('/',viaje_controllers.obtenerViaje);
+viajeRouter.get('/mostrar-viaje',viaje_controllers.obtenerViaje);
 
 //RUTA POSTEAR VIAJE
 viajeRouter.post('/agregar-viaje', viaje_controllers.agregarViaje);

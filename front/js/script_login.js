@@ -54,20 +54,21 @@ function ingresoUsuario () {
     axios.post("http://localhost:8080/login", {
         email_usuario: usuario,
         password_usuario: contrasenia
-    });
-    alert(`Ingresaste usuario ${usuario}`)
+    })
 
     .then((response)=>{
-        console.log(response.status)
-        alert(response.status)
+        alert(response);
+        console.log(response.data.condicion)
 
-        if(response.status ===200) {
-            window.location = "./index.html";
+        if (response.data.condicion === false) {
+            alert('Usted no puede acceder')
+            window.location="http://localhost:8080/pages/login.html"
+
+        } else {
+            alert(`¡Hola ${response.data.nombre_usuario}!`)
+            window.location='http://localhost:8080/index.html'
         }
-    })
-    .catch((error)=>{
-        console.log(`Esto es el error de la linea 68 ${error}`)
-    })
 
+    })
 
 }

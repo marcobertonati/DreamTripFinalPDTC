@@ -3,8 +3,6 @@
 const express = require('express');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
-
-
 const path = require('path');
 
 // ejecutamos el servidor
@@ -36,32 +34,47 @@ app.use(passport.initialize());
 app.use(passport.session()); //passport con sesiones
 
 const isLogin = (req, res, next) => {
-    if (req.isAuthenticated())
+    if (!req.isAuthenticated())
         return next();
-        res.redirect('/');
+        res.redirect('./index.html');
 }
 
 //Login passport
 app.post('/login', (req, res, next) => {
     passport.authenticate('local.login', (err, user, info) => {
         console.log('Entró en autenticar')
+        // console.log(`Esto tiene info: ${info.mensaje}`)
+        console.log(`Esto tiene user: ${user.nombre_usuario}`)
 
-        if (err) { return next(err) }
+
+        if (err) { 
+            return next(err) 
+        }
         console.log(err)
         console.log('Paso Next')
 
-        if (!user) { return res.send(info) }
+        if (!user) { 
+            return res.send(info) 
+        }
+
         console.log(!user)
         console.log('Paso 2 Next')
 
         req.login(user, function(err) {
-            if (err) { return next(err); }
+            if (err) { 
+                console.log(`Este el el error de la linea 60: ${err}`)
+                return next(err); 
+            }
             console.log('Paso 3 Next')
             console.log(user);
-            return res.redirect('/users/' + user.username);
+            return res.send(user);
+
         });
-    })(req, res, next)
-})
+
+    })(req, res, next) 
+}
+
+)
 
 
 // app.post('/login',
