@@ -4,6 +4,7 @@
 const {conexion_db} = require("../config/bdConfig");
 
 // app.use(express.static(path.parse(__dirname).dir + '/front'));
+
 // obtenemos viajes
 const obtenerViaje = (req, res) => {
   // Envio de Front end - con esto logramos enviarle al usuario todo el front.
@@ -51,7 +52,22 @@ const agregarViaje = (req, res) => {
 
 
 // eliminar viajes
+const eliminarViaje = (req, res) => {
+  console.log('El usuario quiere elimar un viaje')
+  //destructuring
 
+  console.log(req.params);
+
+  let {id_viaje} = req.params;
+  // req.body; 
+  console.log(`El id del viaje es ${id_viaje}`)
+  conexion_db.query('DELETE FROM `t_viaje` WHERE id_viaje = ?', [id_viaje], (err, results) => {
+      if (err)
+          throw err;
+      // res.send('Viaje Eliminado');
+  })
+
+}
 
 // Registro Usuario
 const registroUsuario = (req, res) => {
@@ -93,4 +109,4 @@ res.send('Datos enviados!')
 };
 
 
-module.exports = { obtenerViaje, agregarViaje, registroUsuario };
+module.exports = {obtenerViaje, agregarViaje, eliminarViaje, registroUsuario}

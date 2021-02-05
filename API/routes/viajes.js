@@ -8,16 +8,17 @@ const express = require('express');
 // Requerimos controllers
 const viaje_controllers = require('../controllers/dreamTripControllers');
 
-// Definimos
+// Definimos el routeador
 const viajeRouter = express.Router();
 
-//RUTA OBTENER VIAJES
+// RUTA OBTENER VIAJES
 viajeRouter.get('/mostrar-viaje',viaje_controllers.obtenerViaje);
 
-//RUTA POSTEAR VIAJE
+// RUTA POSTEAR VIAJE
 viajeRouter.post('/agregar-viaje', viaje_controllers.agregarViaje);
 
-//RUTA ELIMINAR VIAJE
+// RUTA ELIMINAR VIAJE
+viajeRouter.delete('/eliminar-viaje', viaje_controllers.eliminarViaje);
 
 // REGISTRO USUARIO
 viajeRouter.post('/registro', viaje_controllers.registroUsuario);
