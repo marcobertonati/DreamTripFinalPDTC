@@ -73,8 +73,24 @@
   </header>
 </div>
 ​
-​
-​
+<!-- ​Formulario buscar viaje -->
+<div class="container"><br>
+  <h2 class="buscarViaje">¿A dónde querés viajar? </h2>
+  <div class="formulario-bg buscar"></div>
+  <form id="formulario-viaje" class="formulario" action="http://localhost:8080/admin/agregar-viaje" method="POST">
+
+      <div class="form-row">
+          <div class="form-group col-md-12">
+              <label for="buscar_destino">Destino</label>
+              <input type="text" class="form-control campo" id="buscar_destino" placeholder="Ingresa un destino" required name="destino">
+          </div><br>
+        </div>
+        <div class="botonBuscarViaje">
+          <button type="submit" class="btn btn-primary" onclick="">Buscar</button>
+      </div>
+    </form>
+</div>​
+
 ​
 ​
 <!-- Footer -->

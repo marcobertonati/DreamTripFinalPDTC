@@ -1,13 +1,9 @@
- /* Body */
+/* Body */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-
-/* * {
-    border: 0.1px solid black; 
-} */
 
 @media (max-width:600px) {
     .tituloWeb {
@@ -27,6 +23,7 @@
     padding-right: 0px !important;
 
 }
+
 .usuario {
     display: flex;
     flex-direction: row-reverse;
@@ -35,7 +32,6 @@
     padding-right: 1rem !important;
   }
   
-
 .tituloWeb {
     font-family: 'Fredoka One', cursive;
     text-align: left;
@@ -121,6 +117,8 @@ a {
     font-size: 1rem;
     padding-left: 2rem;
 }
+
+
 /* items secciones */
 .navbar-light .navbar-nav .nav-link {
     color: white;
@@ -136,22 +134,23 @@ a {
     color: rgb(76, 75, 75);
     padding-bottom: 3rem;
 }
+
 .botonRegistro {
     display: flex;
     justify-content: center;
     padding-bottom: 8rem;
 }
+
 .btn-primary {
     background-color: #56baed !important;
     border-color:#56baed !important;
     cursor: pointer;
 }
+
 .btn-primary:hover {
     background-color: #1D7DEF !important;
     transition: background-color 0.5s;   
-
 }
-
 
 /* CARUSEL */
 ::-webkit-scrollbar {
@@ -180,7 +179,6 @@ a {
 }
 
 /* CARUSEL */
-
 ::-webkit-scrollbar {
     background: #d4d4d4;
     width: 8px;
@@ -239,7 +237,6 @@ a {
 }
 
 /*imágenes carrusel*/
-
 #carousel .item-1 {
     background-image: url('../img/1.jpg');
 }
@@ -312,29 +309,34 @@ a {
 }
 
 /* Cards trip */
-
 #cards-trip {
     margin: 20px;
 }
 
-
 /* Formulario para armar viajes */
+.armandoMiViaje {
+    font-size: 1.8rem;
+    color: #1D7DEF;
+    font-family: 'Red Hat Display', sans-serif;
+    padding-top: 2rem;
+}
 
 .formulario-bg {
-    background-image: url(../img/purmamarca.JPG);
-    height: 35rem;
+    background-image: url(../img/travel.jpg);
+    height: 25rem;
     background-size: cover;
     background-repeat: no-repeat;
-    border: 4px solid #1D7DEF;
+    border: 2px solid #5fa0f0;
+    padding: 5rem 5rem 2rem 5rem ;
 }
 
 .formulario {
     background-color: #ffffff;
     margin: -5rem auto 0 auto;
     width: 80%;
-    padding: 5rem 5rem 2rem 5rem ;
+    padding: 2rem 2rem 2rem 2rem ;
     font-size: 1.2rem;
-    color: rgb(107, 138, 242);
+    color: #1D7DEF;
     font-family: 'Red Hat Display', sans-serif;
 }
 
@@ -367,9 +369,37 @@ a {
     }
 }
 
+.botonArmarViaje {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 12rem;
+    padding-top: 2rem;
+}
+
+/* Buscar viaje */
+.botonBuscarViaje {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 12rem;
+    padding-top: 2rem;
+}
+
+.buscarViaje {
+    font-size: 1.8rem;
+    color: #1D7DEF;
+    font-family: 'Red Hat Display', sans-serif;
+    padding-top: 2rem;
+}
+
+.buscar {
+    background-image: url(../img/fondoBuscarViaje.png);
+    height: 30rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 5rem 5rem 5rem 5rem;
+}
 
 /* Footer */
-
 .card {
     padding-top: 3rem;
     margin: 1rem;
@@ -385,9 +415,7 @@ a {
     margin-bottom: 0.5rem;
 }
 
-
 /* mis viajes perfil*/
-
 .viaje {
     background-color: #1D7DEF;
     padding: 0.5rem 1rem;
