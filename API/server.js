@@ -30,6 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 // Requerimos la configuración de passport
 const { passport } = require('./config/passportConfig');
 
+// Utilizamos passport
 app.use(passport.initialize());
 app.use(passport.session()); //passport con sesiones
 
@@ -72,9 +73,8 @@ app.post('/login', (req, res, next) => {
         });
 
     })(req, res, next) 
-}
+})
 
-)
 
 
 // app.post('/login',
@@ -95,12 +95,14 @@ app.get('/logout', isLogin, (req, res)=>{
 
 // Requerimos rutas de API
 const viajeRouter = require('./routes/viajes');
-const { Router } = require('express');
 app.use('/admin', viajeRouter);
+
+
 
 
 // Envio de Front end - con esto logramos enviarle al usuario todo el front.
 app.use(express.static(path.parse(__dirname).dir + '/front'));
+
 
 // chequeamos que nos esté escuchando
 app.listen(8080, () => {

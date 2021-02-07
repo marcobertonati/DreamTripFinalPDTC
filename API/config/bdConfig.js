@@ -4,9 +4,8 @@ const mysql = require('mysql');
 const options = {
     host: 'localhost',
     user: 'root',
-    password: 'root',
+    password: '',
     database: 'dreamtrip', //base de datos
-    port: 8889
 };
 
 const conexion_db = mysql.createConnection(options);
@@ -18,7 +17,7 @@ conexion_db.connect((err) => {
         if (err) {
             console.log(err)
         } else {
-            console.log('conexión a base de datos exitosa');
+            console.log('Conexión a base de datos exitosa');
         }
     })
     // exportamos

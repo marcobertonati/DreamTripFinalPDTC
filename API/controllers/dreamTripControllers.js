@@ -5,19 +5,18 @@ const {conexion_db} = require("../config/bdConfig");
 
 // app.use(express.static(path.parse(__dirname).dir + '/front'));
 
-// obtenemos viajes
+// Obtenemos viajes
 const obtenerViaje = (req, res) => {
   // Envio de Front end - con esto logramos enviarle al usuario todo el front.
   conexion_db.query("SELECT * FROM t_viaje", (err, results) => {
     if (err) throw err;
     // console.log(results);
     res.send(results);
-    // res.send('Datos importados de la base de datos');
   });
 };
 
 
-// agregar viaje
+// Agregar viaje
 const agregarViaje = (req, res) => {
     console.log("se ejecutó primera parte");
 
@@ -51,12 +50,13 @@ const agregarViaje = (req, res) => {
 // editar viajes
 
 
-// eliminar viajes
+// Eliminar viajes
 const eliminarViaje = (req, res) => {
   console.log('El usuario quiere elimar un viaje')
   //destructuring
 
   console.log(req.params);
+
 
   let {id_viaje} = req.params;
   // req.body; 
@@ -64,7 +64,7 @@ const eliminarViaje = (req, res) => {
   conexion_db.query('DELETE FROM `t_viaje` WHERE id_viaje = ?', [id_viaje], (err, results) => {
       if (err)
           throw err;
-      // res.send('Viaje Eliminado');
+      res.send('Viaje Eliminado');
   })
 
 }

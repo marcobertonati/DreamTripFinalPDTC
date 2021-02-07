@@ -28,7 +28,7 @@
                             <a class="nav-link dropdown-toggle" id="miCuenta" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mi cuenta</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="pages/perfil.html">Mi perfil</a>
-                                <a class="dropdown-item" href="#">Cerrar sesión</a>
+                                <a class="dropdown-item" href="#" onclick="cerrarSesion()">Cerrar sesión</a>
                         </li>
                     </ul>
                     <img class="icon" src="../img/perfil_icon.svg" alt="">
@@ -76,7 +76,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="destino">Destino</label>
-                        <input type="text" class="form-control campo" id="destino" placeholder="Ingresa un destino" required name="destino">
+                        <input type="text" class="form-control campo" id="destino-armar" placeholder="Ingresa un destino" required name="destino">
                     </div><br>
                     <div class="form-group col-md-12">
                         <label for="fecha">Fecha</label>
@@ -84,7 +84,7 @@
                     </div>
                     <div class="form-group col-md-12">
                         <label for="presupuesto">Presupuesto</label>
-                        <input type="number" class="form-control campo" id="presupuesto" placeholder="¿Cuál es tu presupuesto? $" required name="presupuesto">
+                        <input type="number" class="form-control campo" id="presupuesto" placeholder="¿Cuál es tu presupuesto?" required name="presupuesto">
                     </div><br>
                     <div class="form-group col-md-12">
                         <label for="comentario">Ideas e información</label>

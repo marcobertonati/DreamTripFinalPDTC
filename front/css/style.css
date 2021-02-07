@@ -44,6 +44,7 @@
 .nViajes {
     font-family: 'Red Hat Display', sans-serif;
     margin-left: 2rem;
+    color:#1D7DEF;
 }
 
 /* icono perfil y nombre usuario */
@@ -311,6 +312,13 @@ a {
 /* Cards trip */
 #cards-trip {
     margin: 20px;
+    background-image: url(../img/travel.jpg);
+}
+
+#destino {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+    color: #1D7DEF;
 }
 
 /* Formulario para armar viajes */
