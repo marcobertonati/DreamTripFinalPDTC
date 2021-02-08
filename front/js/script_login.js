@@ -5,9 +5,7 @@ function enviar(pagina) {
 
 }
 
-
 // Registro Usuario
-
 function registroUsuario() {
     // console.log("entre a la funcion")
     // if (e.preventDefault()) {
@@ -44,6 +42,7 @@ function registroUsuario() {
     }
 }
 
+// Ingreso Usuario
 function ingresoUsuario () {
     let usuario = document.getElementById("login").value;
     let contrasenia = document.getElementById("password").value;

@@ -69,10 +69,7 @@ function enviarDatos() {
 
 // Cerrar sesión
 function cerrarSesion() {
-  alert('vas a Cerrar sesion');
-
-  axios.get("http://localhost:8080/logout", {
-  })
-  alert('Cerraste sesion');
-
+  alert('Vas a Cerrar sesion');
+  axios.get("http://localhost:8080/logout");
+  window.location = "../pages/login.html";
 }

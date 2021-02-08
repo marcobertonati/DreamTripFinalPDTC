@@ -5,7 +5,7 @@ const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
 const path = require('path');
 
-// ejecutamos el servidor
+// Ejecutamos el servidor
 const app = express();
 
 // MEIDDLEWARE SESSION STORE
@@ -18,11 +18,11 @@ app.use(session({
     store: sessionStore
 }))
 
-// requerimos cors
+// Requerimos cors
 const cors = require('cors');
 app.use(cors());
 
-// middleware que permite lectura de datos del lado del cliente:
+// Middleware que permite lectura de datos del lado del cliente:
 // permite que mi app acepte json del lado del cliente
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -34,13 +34,15 @@ const { passport } = require('./config/passportConfig');
 app.use(passport.initialize());
 app.use(passport.session()); //passport con sesiones
 
-const isLogin = (req, res, next) => {
-    if (!req.isAuthenticated())
-        return next();
-        res.redirect('./index.html');
-}
+// const isLogin = (req, res, next) => {
+//     console.log(`Estoy en la función isLogin`)
+//     if (!req.isAuthenticated()) {
+//         return next();
+//     }
+//     return res.redirect('./index.html');
+// }
 
-//Login passport
+// Login passport
 app.post('/login', (req, res, next) => {
     passport.authenticate('local.login', (err, user, info) => {
         console.log('Entró en autenticar')
@@ -75,22 +77,21 @@ app.post('/login', (req, res, next) => {
     })(req, res, next) 
 })
 
-
-
-// app.post('/login',
-// passport.authenticate('local.login', {
+// app.post('/login', passport.authenticate('local.login', {
 //     successRedirect: 'https://www.google.com/',
 //     failureRedirect: '/login',
 //     failureFlash: true
 // }))
 
-
-//logout
-app.get('/logout', isLogin, (req, res)=>{
-    console.log('Entro a logout')
+// LogOut
+app.get('/logout', (req, res)=>{
+    console.log('Entro a logout');
     req.logout();
-    res.send('/');
-  });
+    req.session.destroy();
+    res.redirect('/');
+    console.log('Pasó logout');
+
+});
 
 
 // Requerimos rutas de API
@@ -98,7 +99,16 @@ const viajeRouter = require('./routes/viajes');
 app.use('/admin', viajeRouter);
 
 
-
+app.get('/' , (req,res) => {
+    console.log('Entro a la raíz de la página web')
+    if(req.isAuthenticated()) {
+        console.log('Entro a index ya que no está logueado')
+        res.redirect('index.html')
+    } else {
+        console.log('Entro login ya que no está logueado')
+        res.redirect('pages/login.html')
+    }
+})
 
 // Envio de Front end - con esto logramos enviarle al usuario todo el front.
 app.use(express.static(path.parse(__dirname).dir + '/front'));

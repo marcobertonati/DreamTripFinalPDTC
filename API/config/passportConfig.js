@@ -64,14 +64,14 @@ passport.use('local.login', new localStrategy({
 
 // Serialización hay que modular
 passport.serializeUser((user, done) => {
-    console.log('ESTE USUARIO ES EL QUE ENCONTRE');
-    // console.log(user);
+    console.log(`Usuario ${user.email_usuario} encontrado`);
+    console.log(user);
     done(null, user.email_usuario);
 });
 
 // Deserealización
 passport.deserializeUser((email_usuario, done) => {
-    console.log('Entro a la deserialización')
+    // console.log('Entro a la deserialización')
     // console.log(email_usuario)
     conexion_db.query('SELECT * FROM t_usuario WHERE email_usuario=?', [email_usuario], (err, results) => {
         // console.log(results[0])

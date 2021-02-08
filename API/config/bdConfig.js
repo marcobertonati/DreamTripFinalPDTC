@@ -1,6 +1,7 @@
-// requerimos mysql
+// Eequerimos mysql
 const mysql = require('mysql');
-// definimos base de datos
+
+// Definimos base de datos
 const options = {
     host: 'localhost',
     user: 'root',
@@ -8,11 +9,10 @@ const options = {
     database: 'dreamtrip', //base de datos
 };
 
+// Creamos conexión a base de datos
 const conexion_db = mysql.createConnection(options);
-console.log(typeof(conexion_db));
 
-
-// conectamos base de datos
+// Conectamos base de datos
 conexion_db.connect((err) => {
         if (err) {
             console.log(err)
@@ -20,5 +20,6 @@ conexion_db.connect((err) => {
             console.log('Conexión a base de datos exitosa');
         }
     })
-    // exportamos
+
+// Exportamos
 module.exports = { options, conexion_db }
