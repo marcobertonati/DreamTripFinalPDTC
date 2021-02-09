@@ -33,7 +33,7 @@ function verEliminarViajes() {
               <!-- ACA VA TEXTO -->
             </li>
             <li class="list-group-item" id="btn">                
-              <button class="botones-eliminar" id="${element.id_viaje}" onclick="eliminarViaje(${element.id_viaje})"> Eliminar viaje</button>
+              <button class="botones-eliminar btn btn-primary" id="${element.id_viaje}" onclick="eliminarViaje(${element.id_viaje})"> Eliminar viaje</button>
             </li>
           </ul>
   
@@ -50,10 +50,17 @@ function verEliminarViajes() {
   verEliminarViajes()
 
   // Eliminar viaje
-  function eliminarViaje(id_boton) {
+function eliminarViaje(id_boton) {
   
     axios.delete(`http://localhost:8080/admin/eliminar-viaje/${id_boton}`)
 
     location.reload();
 
   }
+
+  // Cerrar sesión
+function cerrarSesion() {
+  alert('Vas a Cerrar sesion');
+  axios.get("http://localhost:8080/logout");
+  window.location = "../pages/login.html";
+}

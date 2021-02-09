@@ -49,7 +49,6 @@ app.post('/login', (req, res, next) => {
         // console.log(`Esto tiene info: ${info.mensaje}`)
         console.log(`Esto tiene user: ${user.nombre_usuario}`)
 
-
         if (err) { 
             return next(err) 
         }
@@ -98,17 +97,51 @@ app.get('/logout', (req, res)=>{
 const viajeRouter = require('./routes/viajes');
 app.use('/admin', viajeRouter);
 
+// Protección de rutas HTML
+// app.get('/' , (req,res) => {
+//     console.log('Entro a la raíz de la página web')
+//     if(req.isAuthenticated()) {
+//         console.log('Entro a index ya que no está logueado')
+//         res.redirect('index.html')
+//     } else {
+//         console.log('Entro login ya que no está logueado')
+//         res.redirect('pages/login.html')
+//     }
+// })
 
-app.get('/' , (req,res) => {
-    console.log('Entro a la raíz de la página web')
-    if(req.isAuthenticated()) {
-        console.log('Entro a index ya que no está logueado')
-        res.redirect('index.html')
-    } else {
-        console.log('Entro login ya que no está logueado')
-        res.redirect('pages/login.html')
-    }
-})
+// app.get('/pages/buscarviaje.html' , (req,res) => {
+//     console.log('Entro a buscar viaje')
+//     if(req.isAuthenticated()) {
+//         console.log('Entro a buscar viaje ya que está logueado')
+//         res.redirect('buscarviaje.html')
+
+//     } else {
+//         console.log('Entro login ya que no está logueado')
+//         res.redirect('login.html')
+//     }
+// })
+
+// app.get('/pages/armarviaje.html' , (req,res) => {
+//     console.log('Entro a armar viaje viaje')
+//     if(req.isAuthenticated()) {
+//         console.log('Entro a armarviaje ya que está logueado')
+      
+//     } else {
+//         console.log('Entro login ya que no está logueado')
+//         res.redirect('login.html')
+//     }
+// })
+
+// app.get('/pages/misviajes.html' , (req,res) => {
+//     console.log('Entro a buscar viaje')
+//     if(req.isAuthenticated()) {
+//         console.log('Entro a index ya que está logueado')
+//         res.redirect('misviajes.html')
+//     } else {
+//         console.log('Entro login ya que no está logueado')
+//         res.redirect('login.html')
+//     }
+// })
 
 // Envio de Front end - con esto logramos enviarle al usuario todo el front.
 app.use(express.static(path.parse(__dirname).dir + '/front'));

@@ -64,7 +64,7 @@ function enviarDatos() {
     comentario_viaje: comentario,
   });
   alert("datos enviados");
-  window.location = "armarviaje.html";
+  window.location = "misviajes.html";
 }
 
 // Cerrar sesión

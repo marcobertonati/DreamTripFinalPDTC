@@ -46,7 +46,7 @@ function registroUsuario() {
 function ingresoUsuario () {
     let usuario = document.getElementById("login").value;
     let contrasenia = document.getElementById("password").value;
-    alert(`El usuario es ${usuario} y su contraseña es ${contrasenia}`)
+    // alert(`El usuario es ${usuario} y su contraseña es ${contrasenia}`)
     console.log(`El usuario es ${usuario} y su contraseña es ${contrasenia}`)
 
 
@@ -56,7 +56,7 @@ function ingresoUsuario () {
     })
 
     .then((response)=>{
-        alert(response);
+        // alert(response);
         console.log(response.data.condicion)
 
         if (response.data.condicion === false) {

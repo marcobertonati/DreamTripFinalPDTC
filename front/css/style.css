@@ -45,6 +45,8 @@
     font-family: 'Red Hat Display', sans-serif;
     margin-left: 2rem;
     color:#1D7DEF;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
 }
 
 /* icono perfil y nombre usuario */
@@ -388,7 +390,7 @@ a {
 .botonBuscarViaje {
     display: flex;
     justify-content: center;
-    padding-bottom: 12rem;
+    padding-bottom: 2rem;
     padding-top: 2rem;
 }
 

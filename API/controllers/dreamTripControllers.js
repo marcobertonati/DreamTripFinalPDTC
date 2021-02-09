@@ -44,7 +44,7 @@ const agregarViaje = (req, res) => {
       console.log("Datos enviados a la base de datos")
     }
   );
-  res.redirect('/index.html');
+  // res.redirect('/index.html');
 };
 
 // editar viajes

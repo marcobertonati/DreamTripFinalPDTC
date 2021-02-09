@@ -78,3 +78,11 @@ function recargarPagina() {
     alert('Hola!')
      
 }
+
+
+// Cerrar sesión
+function cerrarSesion() {
+  alert('Vas a Cerrar sesion');
+  axios.get("http://localhost:8080/logout");
+  window.location = "../pages/login.html";
+}
