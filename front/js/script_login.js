@@ -58,7 +58,7 @@ function ingresoUsuario (e) {
     })
     
     .then((response)=>{
-        // alert(response);
+        console.log(response);
         console.log(response.data.condicion)
 
         if (response.data.condicion === false) {
@@ -72,7 +72,7 @@ function ingresoUsuario (e) {
         }
     })
     .catch((error) => {
-        // window.location='login.html'
+        window.location='login.html'
 
     })
 

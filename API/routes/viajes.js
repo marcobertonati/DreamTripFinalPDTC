@@ -9,10 +9,9 @@ const viaje_controllers = require('../controllers/dreamTripControllers');
 
 // Autenticar
 const isAuthenticated = function (req,res,next) {
-    if (req.isAuthenticated())
-    return next();
-    //  res.send('/pages/misviajes.html');
-     //Si no está autenticado va a la sección logín
+    if (req.isAuthenticated()) return next();
+    return res.send({mesagge:'no tienes acceso'});
+    //Si no está autenticado va a la sección logín
     
 }
 
@@ -20,13 +19,13 @@ const isAuthenticated = function (req,res,next) {
 const viajeRouter = express.Router();
 
 // RUTA OBTENER VIAJES
-viajeRouter.get('/mostrar-viaje', viaje_controllers.obtenerViaje);
+viajeRouter.get('/mostrar-viaje',isAuthenticated, viaje_controllers.obtenerViaje);
 
 // RUTA POSTEAR VIAJE
-viajeRouter.post('/agregar-viaje', viaje_controllers.agregarViaje);
+viajeRouter.post('/agregar-viaje',isAuthenticated, viaje_controllers.agregarViaje);
 
 // RUTA ELIMINAR VIAJE
-viajeRouter.delete('/eliminar-viaje/:id_viaje', viaje_controllers.eliminarViaje);
+viajeRouter.delete('/eliminar-viaje/:id_viaje',isAuthenticated, viaje_controllers.eliminarViaje);
 
 // REGISTRO USUARIO
 viajeRouter.post('/registro', viaje_controllers.registroUsuario);

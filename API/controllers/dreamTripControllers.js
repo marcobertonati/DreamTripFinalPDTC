@@ -49,10 +49,6 @@ const agregarViaje = (req, res) => {
 };
 
 
-
-
-// editar viajes
-
 // Eliminar viajes
 const eliminarViaje = (req, res) => {
   console.log('El usuario quiere elimar un viaje')
@@ -110,6 +106,5 @@ conexion_db.query( 'INSERT INTO `t_usuario`(`nombre_usuario`, `apellido_usuario`
 );
 res.send('Datos enviados!')
 };
-
 
 module.exports = {obtenerViaje, agregarViaje, eliminarViaje, registroUsuario}

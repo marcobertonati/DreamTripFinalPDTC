@@ -68,7 +68,7 @@ app.post('/login', (req, res, next) => {
                 return next(err); 
             }
             console.log('Paso 3 Next')
-            // console.log(user);
+            console.log(user);
             return res.send(user);
         });
 
@@ -90,9 +90,9 @@ app.get('/logout', (req, res)=>{
 
 });
 
-
 // Requerimos rutas de API
 const viajeRouter = require('./routes/viajes');
+
 app.use('/admin', viajeRouter);
 
 // Protección de rutas HTML
@@ -110,7 +110,6 @@ app.use('/admin', viajeRouter);
 
 // Envio de Front end - con esto logramos enviarle al usuario todo el front.
 // app.use(express.static(path.parse(__dirname).dir + '/front'));
-
 
 // chequeamos que nos esté escuchando
 app.listen(8080, () => {

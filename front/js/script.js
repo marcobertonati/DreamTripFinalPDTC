@@ -9,51 +9,59 @@ function mostrarViajes() {
 
   axios.get("http://localhost:8080/admin/mostrar-viaje").then((response) => {
     console.log("PEDIDO DE BASE DE DATOS");
-    console.log(response.data);
+    console.log(response);
+    console.log(response.data.mesagge);
 
-    /* Creamos las CARDS */
-    response.data.forEach((element) => {
-      cardViaje.innerHTML += `<div class="card" style="width: 18rem" id="contender-tarjeta">
+    if (response.data.mesagge === "no tienes acceso") {
+      window.location="./pages/login.html"
+    } else {
 
-      <div class="divCard"><img class="iconoCard" src="./img/maleta.svg" 
-            srcset="maleta.svg/></div><br>
+/* Creamos las CARDS */
+response.data.forEach((element) => {
+  cardViaje.innerHTML += `<div class="card" style="width: 18rem" id="contender-tarjeta">
 
-            <div class="card-body" id="card">
+  <div class="divCard"><img class="iconoCard" src="./img/maleta.svg" 
+        srcset="maleta.svg/></div><br>
 
-            <div height="20px" style="background-image:url(./img/1.jpg"></div>
-        
+        <div class="card-body" id="card">
 
-            <h5 class="card-title" id="destino">                
-            ${element.destino_viaje}
-          </h5>
+        <div height="20px" style="background-image:url(./img/1.jpg"></div>
+    
 
-          <p class="card-text" id="comentario">
-            ${element.comentario_viaje}
-          </p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item" id="presupuesto">$               
-            ${element.presupuesto_viaje}
-          </li>
-          <li class="list-group-item" id="fecha">                
-            ${element.fecha_viaje}
-          </li>
-          <li class="list-group-item" id="contacto">                
-            ${element.contacto_viaje}
-          </li>
-        </ul>
+        <h5 class="card-title" id="destino">                
+        ${element.destino_viaje}
+      </h5>
 
-        <div class="card-body">
-          <a href="#" class="card-link" id="usuario">                
-            <!-- ACA VA TEXTO -->
-          </a>
-        </div>
-        </div>
-        </div class="card" style="width: 18rem;">`;
-    });
+      <p class="card-text" id="comentario">
+        ${element.comentario_viaje}
+      </p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" id="presupuesto">$               
+        ${element.presupuesto_viaje}
+      </li>
+      <li class="list-group-item" id="fecha">                
+        ${element.fecha_viaje}
+      </li>
+      <li class="list-group-item" id="contacto">                
+        ${element.contacto_viaje}
+      </li>
+    </ul>
+
+    <div class="card-body">
+      <a href="#" class="card-link" id="usuario">                
+        <!-- ACA VA TEXTO -->
+      </a>
+    </div>
+    </div>
+    </div class="card" style="width: 18rem;">`;
+});
+    }
+
+    
   });
 }
-mostrarViajes();
+// mostrarViajes();
 
 
 // Función ARMAR viaje
