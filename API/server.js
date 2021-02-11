@@ -68,9 +68,8 @@ app.post('/login', (req, res, next) => {
                 return next(err); 
             }
             console.log('Paso 3 Next')
-            console.log(user);
+            // console.log(user);
             return res.send(user);
-
         });
 
     })(req, res, next) 
@@ -87,7 +86,6 @@ app.get('/logout', (req, res)=>{
     console.log('Entro a logout');
     req.logout();
     req.session.destroy();
-    res.redirect('/');
     console.log('Pasó logout');
 
 });
@@ -109,42 +107,9 @@ app.use('/admin', viajeRouter);
 //     }
 // })
 
-// app.get('/pages/buscarviaje.html' , (req,res) => {
-//     console.log('Entro a buscar viaje')
-//     if(req.isAuthenticated()) {
-//         console.log('Entro a buscar viaje ya que está logueado')
-//         res.redirect('buscarviaje.html')
-
-//     } else {
-//         console.log('Entro login ya que no está logueado')
-//         res.redirect('login.html')
-//     }
-// })
-
-// app.get('/pages/armarviaje.html' , (req,res) => {
-//     console.log('Entro a armar viaje viaje')
-//     if(req.isAuthenticated()) {
-//         console.log('Entro a armarviaje ya que está logueado')
-      
-//     } else {
-//         console.log('Entro login ya que no está logueado')
-//         res.redirect('login.html')
-//     }
-// })
-
-// app.get('/pages/misviajes.html' , (req,res) => {
-//     console.log('Entro a buscar viaje')
-//     if(req.isAuthenticated()) {
-//         console.log('Entro a index ya que está logueado')
-//         res.redirect('misviajes.html')
-//     } else {
-//         console.log('Entro login ya que no está logueado')
-//         res.redirect('login.html')
-//     }
-// })
 
 // Envio de Front end - con esto logramos enviarle al usuario todo el front.
-app.use(express.static(path.parse(__dirname).dir + '/front'));
+// app.use(express.static(path.parse(__dirname).dir + '/front'));
 
 
 // chequeamos que nos esté escuchando

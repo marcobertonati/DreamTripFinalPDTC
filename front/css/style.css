@@ -319,8 +319,19 @@ a {
 
 #destino {
     font-family: 'Fredoka One', cursive;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: #1D7DEF;
+}
+
+.iconoCard {
+    height: 120px;
+    padding-bottom: 30px;
+}
+
+.divCard {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
 }
 
 /* Formulario para armar viajes */

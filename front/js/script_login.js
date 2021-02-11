@@ -11,8 +11,6 @@ function registroUsuario() {
     // if (e.preventDefault()) {
     //    console.log("Pase el prevent"); 
     // };
-
-
     let nombre = document.querySelector("#nombre_usuario").value;
     let apellido = document.querySelector("#apellido_usuario").value;
     let email = document.querySelector("#email_usuario").value;
@@ -37,13 +35,17 @@ function registroUsuario() {
             pais_usuario: pais,
             password_usuario: contraseña
         });
-        alert("datos enviados");
+        alert("¡Registro finalizado!");
         window.location = "login.html";
     }
 }
 
+document.querySelector('#form-login').addEventListener('submit', ingresoUsuario)
+
 // Ingreso Usuario
-function ingresoUsuario () {
+function ingresoUsuario (e) {
+    e.preventDefault();
+
     let usuario = document.getElementById("login").value;
     let contrasenia = document.getElementById("password").value;
     // alert(`El usuario es ${usuario} y su contraseña es ${contrasenia}`)
@@ -54,20 +56,25 @@ function ingresoUsuario () {
         email_usuario: usuario,
         password_usuario: contrasenia
     })
-
+    
     .then((response)=>{
         // alert(response);
         console.log(response.data.condicion)
 
         if (response.data.condicion === false) {
-            alert('Usted no puede acceder')
-            window.location="http://localhost:8080/pages/login.html"
+
+            alert('¡Usuario o contraseñaincorrecta!')
+            window.location='login.html'
 
         } else {
-            alert(`¡Hola ${response.data.nombre_usuario}!`)
-            window.location='http://localhost:8080/index.html'
+            alert('¡Hola!')
+            window.location='../index.html';
         }
+    })
+    .catch((error) => {
+        // window.location='login.html'
 
     })
 
 }
+

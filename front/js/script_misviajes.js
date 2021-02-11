@@ -11,6 +11,9 @@ function verEliminarViajes() {
       /* Creamos las CARDS */
       response.data.forEach((element) => {
         cardViaje.innerHTML += `<div class="card" style="width: 18rem" id="contender-tarjeta">
+
+        <div class="divCard"><img class="iconoCard" src="../img/maleta.svg" 
+            srcset="maleta.svg/></div><br>
   
               <div class="card-body" id="card">
               
@@ -29,9 +32,9 @@ function verEliminarViajes() {
             <li class="list-group-item" id="fecha">                
               ${element.fecha_viaje}
             </li>
-            <li class="list-group-item" id="ubicacion">                
-              <!-- ACA VA TEXTO -->
-            </li>
+            <li class="list-group-item" id="contacto">                
+            ${element.contacto_viaje}
+          </li>
             <li class="list-group-item" id="btn">                
               <button class="botones-eliminar btn btn-primary" id="${element.id_viaje}" onclick="eliminarViaje(${element.id_viaje})"> Eliminar viaje</button>
             </li>
@@ -47,7 +50,9 @@ function verEliminarViajes() {
       });
     });
   }
+
   verEliminarViajes()
+
 
   // Eliminar viaje
 function eliminarViaje(id_boton) {

@@ -1,4 +1,7 @@
+console.log('Entró al index')
+
 // Función MOSTRAR viaje
+
 function mostrarViajes() {
   console.log("PEDIDO DE BASE DE DATOS");
 
@@ -11,6 +14,9 @@ function mostrarViajes() {
     /* Creamos las CARDS */
     response.data.forEach((element) => {
       cardViaje.innerHTML += `<div class="card" style="width: 18rem" id="contender-tarjeta">
+
+      <div class="divCard"><img class="iconoCard" src="./img/maleta.svg" 
+            srcset="maleta.svg/></div><br>
 
             <div class="card-body" id="card">
 
@@ -32,8 +38,8 @@ function mostrarViajes() {
           <li class="list-group-item" id="fecha">                
             ${element.fecha_viaje}
           </li>
-          <li class="list-group-item" id="ubicacion">                
-            <!-- ACA VA TEXTO -->
+          <li class="list-group-item" id="contacto">                
+            ${element.contacto_viaje}
           </li>
         </ul>
 
@@ -49,6 +55,7 @@ function mostrarViajes() {
 }
 mostrarViajes();
 
+
 // Función ARMAR viaje
 function enviarDatos() {
   // e.preventDefault();
@@ -57,15 +64,21 @@ function enviarDatos() {
   let fecha = document.querySelector("#fecha").value;
   let presupuesto = document.querySelector("#presupuesto").value;
   let comentario = document.querySelector("#comentario").value;
+  let contacto = document.querySelector("#contacto").value;
   axios.post("http://localhost:8080/admin/agregar-viaje", {
     destino_viaje: destino,
     fecha_viaje: fecha,
     presupuesto_viaje: presupuesto,
     comentario_viaje: comentario,
+    contacto_viaje: contacto
+  })
+  .then ((data) => {
+    console.log(data);
   });
-  alert("datos enviados");
-  window.location = "misviajes.html";
+  alert('¡Datos enviados')
 }
+
+document.querySelector('#formulario-viaje').addEventListener('submit', enviarDatos)
 
 // Cerrar sesión
 function cerrarSesion() {

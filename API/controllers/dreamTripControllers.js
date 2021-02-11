@@ -15,7 +15,6 @@ const obtenerViaje = (req, res) => {
   });
 };
 
-
 // Agregar viaje
 const agregarViaje = (req, res) => {
     console.log("se ejecutó primera parte");
@@ -25,14 +24,15 @@ const agregarViaje = (req, res) => {
     destino_viaje,
     fecha_viaje,
     presupuesto_viaje,
-    comentario_viaje
+    comentario_viaje,
+    contacto_viaje
   } = req.body;
 
   console.log("se ejecutó segunda parte")
 
   conexion_db.query(
-    'INSERT INTO `t_viaje`(`destino_viaje`, `fecha_viaje`, `presupuesto_viaje`, `comentario_viaje`) VALUES (?,?,?,?)',
-    [destino_viaje, fecha_viaje, presupuesto_viaje, comentario_viaje], (err, results) => {
+    'INSERT INTO `t_viaje`(`destino_viaje`, `fecha_viaje`, `presupuesto_viaje`, `comentario_viaje`, `contacto_viaje`) VALUES (?,?,?,?,?)',
+    [destino_viaje, fecha_viaje, presupuesto_viaje, comentario_viaje, contacto_viaje], (err, results) => {
     console.log("se ejecutó tercera parte")
       if (err) {
           console.log("ENTRO A UN ERROR")
@@ -44,11 +44,14 @@ const agregarViaje = (req, res) => {
       console.log("Datos enviados a la base de datos")
     }
   );
-  // res.redirect('/index.html');
+
+  // res.send('Objeto')
 };
 
-// editar viajes
 
+
+
+// editar viajes
 
 // Eliminar viajes
 const eliminarViaje = (req, res) => {

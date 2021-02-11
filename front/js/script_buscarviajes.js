@@ -2,8 +2,6 @@
 
 function buscarViaje(event) {
     event.preventDefault()
-
-
     const lugarViaje = document.getElementById('buscar_destino').value;
     
     axios.get(`http://localhost:8080/admin/mostrar-viaje`)
@@ -14,6 +12,9 @@ function buscarViaje(event) {
             if (element.destino_viaje === lugarViaje) {
 
                 cardViaje.innerHTML += `<div class="card" style="width: 18rem" id="contender-tarjeta">
+
+                <div class="divCard"><img class="iconoCard" src="../img/maleta.svg" 
+            srcset="maleta.svg/></div><br>
 
             <div class="card-body" id="card">
 
@@ -35,8 +36,8 @@ function buscarViaje(event) {
           <li class="list-group-item" id="fecha">                
             ${element.fecha_viaje}
           </li>
-          <li class="list-group-item" id="ubicacion">                
-            <!-- ACA VA TEXTO -->
+          <li class="list-group-item" id="contacto">                
+            ${element.contacto_viaje}
           </li>
         </ul>
 
